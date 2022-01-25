@@ -1,14 +1,8 @@
 <h1>My Portfolio</h1>
 
-<%= form_tag search_stock_path, method: :get, class: "d-flex search-form mt-4" do %>
+<%= form_tag search_stock_path, remote: true, method: :get, class: "d-flex search-form mt-4 mb-3" do %>
   <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", class:"search-input" %>
   <%= submit_tag 'Search', class:"search-submit" %>
 <% end %>
 
-<% if @stock %>
-  <div class="card card-header d-inline-block mt-3">
-    <strong>Symbol: </strong><%= @stock.ticker %>
-    <strong>Name: </strong><%= @stock.name %>
-    <strong>Price: </strong><%= @stock.last_price %>
-  </div>
-<% end %>
+<div id="results"></div>
