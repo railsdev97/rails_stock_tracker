@@ -1,1 +1,24 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+.search-form {
+  .search-input {
+    width: 500px;
+    padding: 10px 15px;
+    border: 1px solid lightgray;
+    border-radius: 5px 0 0 5px;
+  }
+  .search-input:focus{
+    outline: 2px solid lightblue;
+    z-index: 1;
+  }
+  .search-submit {
+    padding: 10px 25px;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    border-radius: 0 5px 5px 0;
+  }
+  .search-submit:focus {
+    outline: 2px solid lightblue;
+    z-index: 1;
+  }
+}
