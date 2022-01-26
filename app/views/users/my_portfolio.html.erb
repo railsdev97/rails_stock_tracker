@@ -6,3 +6,7 @@
 <% end %>
 
 <div id="results"></div>
+
+<% if @tracked_stocks.count > 0 %>
+  <%= render 'stocks/stocks_list' %>
+<% end %>
