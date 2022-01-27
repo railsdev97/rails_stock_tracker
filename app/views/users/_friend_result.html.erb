@@ -1,0 +1,13 @@
+<div style="width: 500px">
+  <%= render 'shared/flash' %>
+</div>
+
+<% if @friends %>
+  <div class="card card-header d-inline-block mb-3">
+    <% @friends.each do |friend| %>
+      <strong>Email: </strong><%= friend.email %>
+      <%= link_to "Follow", '#',
+                        method: :post, class: 'btn btn-success' %> <br><br>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Friends</h1>
+
+<%= form_tag search_friend_path, remote: true, method: :get, class: "d-flex search-form mt-4 mb-3" do %>
+  <%= text_field_tag :friend, params[:fiend], placeholder: "Email address", class:"search-input" %>
+  <%= submit_tag 'Search', class:"search-submit" %>
+<% end %>
+
+<div id="friend-results"></div>
+
+<% if !@friends.empty? %>
+  <%= render 'friends/friends_list' %>
+<% end %>
