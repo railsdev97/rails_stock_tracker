@@ -7,12 +7,12 @@
     <% @friends.each do |friend| %>
       <strong>Email: </strong><%= friend.email %>
       <% if current_user.not_friend_with?(friend.id) %>
-        <%= link_to "Follow", '#',
+        <%= link_to "Follow", friendships_path(friend: friend),
                           method: :post, class: 'btn btn-success' %> <br><br>
       <% else %>
         <span class="badge bg-secondary">
-          You are already friend
-        </span>
+          You're already friend
+        </span> <br><br>
       <% end %>
     <% end %>
   </div>
