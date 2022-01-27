@@ -7,8 +7,9 @@
     <% @friends.each do |friend| %>
       <strong>Email: </strong><%= friend.email %>
       <% if current_user.not_friend_with?(friend.id) %>
+        <%= link_to "View Profile", user_path(friend), class:'btn btn-sm btn-info' %>
         <%= link_to "Follow", friendships_path(friend: friend),
-                          method: :post, class: 'btn btn-success' %> <br><br>
+                          method: :post, class: 'btn btn-sm btn-success' %> <br><br>
       <% else %>
         <span class="badge bg-secondary">
           You're already friend

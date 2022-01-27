@@ -1,0 +1,11 @@
+<h1>User Details</h1>
+<br>
+
+<h3><%= @user.email %></h3>
+<br>
+
+<% if @tracked_stocks.count > 0 %>
+  <%= render 'stocks/stocks_list' %>
+<% else %>
+  <p class="lead">This user is not tracking any stock</p>
+<% end %>
