@@ -6,8 +6,14 @@
   <div class="card card-header d-inline-block mb-3">
     <% @friends.each do |friend| %>
       <strong>Email: </strong><%= friend.email %>
-      <%= link_to "Follow", '#',
-                        method: :post, class: 'btn btn-success' %> <br><br>
+      <% if current_user.not_friend_with?(friend.id) %>
+        <%= link_to "Follow", '#',
+                          method: :post, class: 'btn btn-success' %> <br><br>
+      <% else %>
+        <span class="badge bg-secondary">
+          You are already friend
+        </span>
+      <% end %>
     <% end %>
   </div>
 <% end %>
